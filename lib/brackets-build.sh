@@ -13,7 +13,7 @@ function brackets-build {
   fi
 
   wget -cqO- https://github.com/fusion809/brackets-installer/raw/master/brackets > $SRC_DEST/brackets2
-  sed -i -e "s|<%-index.html-%>|$SRC_DEST/brackets/src/index.html|g" brackets2
+  sed -i -e "s|<%-index.html-%>|$SRC_DEST/brackets/src/index.html|g" $SRC_DEST/brackets2
 
   printf "Do you want to install Brackets locally or system-wide? [local/system; default is system] "
   read DEST_TYPE
