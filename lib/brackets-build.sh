@@ -37,6 +37,9 @@ function brackets-build {
   rm -rf out
   node_modules/grunt-cli/bin/grunt cef-clean
   node_modules/grunt-cli/bin/grunt setup
+  LINKER=$(sed -n "s/LINK.target ?= //p" Makefile)
+  sed -i -e "s|$LINKER|LINKER|g" Makefile
+  sed -i -e 's/LINKER/${LINK}/g' Makefile
   make
 
   if ! [[ -d $SRC_DEST/brackets ]]; then
