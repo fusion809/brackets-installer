@@ -56,7 +56,7 @@ function brackets-build {
     sudo install -Dm644 "out/Release/appshell${size}.png" "/opt/brackets/appshell${size}.png"
   done
 
-  sudo ln -s /opt/brackets/brackets "/usr/bin/brackets"
+  sudo ln -sf /opt/brackets/brackets "/usr/bin/brackets"
 
   sudo install -Dm644 installer/linux/debian/brackets.desktop "/usr/share/applications/brackets.desktop"
   sudo sed -i -e 's/Categories=Development/Categories=Development;TextEditor;/g' \
