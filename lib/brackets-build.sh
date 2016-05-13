@@ -42,6 +42,7 @@ function brackets-build {
     git submodule update --init --recursive
   fi
 
+  cd $SRC_DEST/brackets-shell
   sudo install -dm755 "/opt/brackets"
   sudo cp -R out/Release/lib "/opt/brackets/lib"
   sudo cp -R out/Release/locales "/opt/brackets/locales"
