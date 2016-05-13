@@ -24,8 +24,13 @@ function brackets-build {
   ver=$(sed -n 's/pkgver=//p' /tmp/brackets/PKGBUILD)
 
   # The following lines are copied from the PKGBUILD
-  git clone https://github.com/adobe/brackets.git#release-$ver $SRC_DEST/brackets
-  git clone https://github.com/adobe/brackets-shell.git#branch=linux-1547 $SRC_DEST/brackets-shell
+  git clone https://github.com/adobe/brackets.git $SRC_DEST/brackets
+  cd $SRC_DEST/brackets
+  git checkout release-$ver
+
+  git clone https://github.com/adobe/brackets-shell.git $SRC_DEST/brackets-shell
+  cd $SRC_DEST/brackets-shell
+  git checkout linux-1547
 
   cd $SRC_DEST/brackets
   git submodule update --init --recursive
