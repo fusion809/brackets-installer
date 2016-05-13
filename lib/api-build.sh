@@ -1,7 +1,7 @@
 #!/bin/bash
 function api-build {
-  VER=$(uname -r)
-  SER=$(echo ${VER##*.} | sed "s/-.*//g")
+  VER=$(uname -r | sed "s/-.*//g")
+  SER=${VER##*.}
   MAJ=${VER%.*}
 
   export PRG=$HOME/Programs
