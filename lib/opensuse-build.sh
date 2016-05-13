@@ -4,7 +4,8 @@
 function opensuse-build {
   # Get dependencies
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
-    git-core libgnome-keyring-devel libX11-devel libudev0 libgcrypt
+    git-core libgnome-keyring-devel libX11-devel libudev0 libgcrypt \
+    gtk2-devel python
   sudo npm install -g node-gyp
   brackets-build
 }
