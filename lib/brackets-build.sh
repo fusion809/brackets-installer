@@ -12,7 +12,7 @@ function brackets-build {
     SRC_DEST=$GHUB
   fi
 
-  printf "Do you want to install Brackets locally or system-wide? [local/system] "
+  printf "Do you want to install Brackets locally or system-wide? [local/system; default is system] "
   read DEST_TYPE
 
   if ! [[ -d /tmp/brackets ]]; then
