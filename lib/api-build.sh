@@ -1,8 +1,8 @@
 #!/bin/bash
 function api-build {
   VER=$(uname -r | sed "s/-.*//g")
-  SER=${VER##*.}
   MAJ=${VER%.*}
+  SER=${MAJ%.*}
 
   export PRG=$HOME/Programs
   export MAJ_SRC="http://www.kernel.org/pub/linux/kernel/v$SER.x/linux-$MAJ.tar.xz"
