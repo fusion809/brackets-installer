@@ -11,7 +11,11 @@ function centos-build {
   if ! `comex node-gyp`; then
     sudo npm install -g node-gyp
   fi
-  libudev0-build
+  if ! [[ -f /usr/lib/libudev.so.0 ]]; then
+    curl -OsL ftp://195.220.108.108/linux/centos/6.7/updates/x86_64/Packages/libudev-147-2.63.el6_7.1.x86_64.rpm /tmp
+    bsdtar -xf /tmp/libudev-147-2.63.el6_7.1.x86_64.rpm
+    sudo cp -a /tmp/lib64/libudev.so.0* /usr/lib/
+  fi
   brackets-build
 }
 
