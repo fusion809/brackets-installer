@@ -1,5 +1,10 @@
 #!/bin/bash
+. ./lib/api-build.sh
+
 function libudev0-build {
+  if ! [[ -f /usr/include/linux/input-event-codes.h ]]; then
+    api-build
+  fi
   curl -sL https://www.kernel.org/pub/linux/utils/kernel/hotplug/udev-182.tar.xz | tar -xJ
   cd udev-182
   autoreconf -vfi
