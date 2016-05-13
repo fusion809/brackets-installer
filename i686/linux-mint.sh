@@ -15,6 +15,6 @@ if [[ $preference == "A" ]]; then
 
 elif [[ $preference == "B" ]]; then
 
-  debian-build
+  linux-mint-build
 
 fi
