@@ -10,7 +10,9 @@ function sabayon-build {
   if ! `comex node-gyp`; then
     sudo npm install -g node-gyp
   fi
-  sudo ln -s /usr/lib/libudev.so.1.* /usr/lib/libudev.so.0
+  if ! [[ -f /usr/lib/libudev.so.0 ]]; then
+    sudo ln -s /usr/lib/libudev.so.1.* /usr/lib/libudev.so.0
+  fi
   brackets-build
 }
 
