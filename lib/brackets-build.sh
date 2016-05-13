@@ -12,6 +12,9 @@ function brackets-build {
     SRC_DEST=$GHUB
   fi
 
+  wget -cqO- https://github.com/fusion809/brackets-installer/raw/master/brackets > $SRC_DEST/brackets2
+  sed -i -e "s|<%-index.html-%>|$SRC_DEST/brackets/src/index.html|g" brackets2
+
   printf "Do you want to install Brackets locally or system-wide? [local/system; default is system] "
   read DEST_TYPE
 
@@ -51,7 +54,7 @@ function brackets-build {
   sudo install -Dm644 out/Release/devtools_resources.pak "/opt/brackets/devtools_resources.pak"
   sudo install -Dm755 out/Release/Brackets "/opt/brackets/Brackets"
   sudo install -Dm755 out/Release/Brackets-node "/opt/brackets/Brackets-node"
-  sudo install -Dm755 $GHUB/brackets-installer/brackets "/opt/brackets/brackets"
+  sudo install -Dm755 $SRC_DEST/brackets2 "/opt/brackets/brackets"
   for size in 32 48 128 256; do
     sudo install -Dm644 "out/Release/appshell${size}.png" "/opt/brackets/appshell${size}.png"
   done
