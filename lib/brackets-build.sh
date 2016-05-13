@@ -24,23 +24,23 @@ function brackets-build {
   ver=$(sed -n 's/pkgver=//p' /tmp/brackets/PKGBUILD)
 
   # The following lines are copied from the PKGBUILD
-  git clone https://github.com/adobe/brackets.git $SRC_DEST/brackets
-  cd $SRC_DEST/brackets
-  git checkout release-$ver
+  if ! [[ -d $SRC_DEST/brackets-shell ]]; then
+    git clone https://github.com/adobe/brackets-shell.git $SRC_DEST/brackets-shell
+    cd $SRC_DEST/brackets-shell
+    git checkout linux-1547
+    npm install
+    rm -rf out
+    node_modules/grunt-cli/bin/grunt cef-clean
+    node_modules/grunt-cli/bin/grunt setup
+    make
+  fi
 
-  git clone https://github.com/adobe/brackets-shell.git $SRC_DEST/brackets-shell
-  cd $SRC_DEST/brackets-shell
-  git checkout linux-1547
-
-  cd $SRC_DEST/brackets
-  git submodule update --init --recursive
-
-  cd ../brackets-shell
-  npm install
-  rm -rf out
-  node_modules/grunt-cli/bin/grunt cef-clean
-  node_modules/grunt-cli/bin/grunt setup
-  make
+  if ! [[ -d $SRC_DEST/brackets ]]; then
+    git clone https://github.com/adobe/brackets.git $SRC_DEST/brackets
+    cd $SRC_DEST/brackets
+    git checkout release-$ver
+    git submodule update --init --recursive
+  fi
 
   sudo install -dm755 "/opt/brackets"
   sudo cp -R out/Release/lib "/opt/brackets/lib"
