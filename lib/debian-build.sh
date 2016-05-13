@@ -6,7 +6,7 @@ function debian-build {
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
   sudo apt-get install -y nodejs build-essential git libudev0 \
     libgnome-keyring-dev fakeroot libx11-dev libgcrypt
-  sudo npm install -g gulp
+  sudo npm install -g node-gyp
   brackets-build
 }
 

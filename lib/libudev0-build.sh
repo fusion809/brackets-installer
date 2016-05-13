@@ -1,3 +1,4 @@
+#!/bin/bash
 function libudev0-build {
   curl -sL https://www.kernel.org/pub/linux/utils/kernel/hotplug/udev-182.tar.xz | tar -xJ
   cd udev-182
@@ -19,3 +20,5 @@ function libudev0-build {
   install -Dm755 .libs/libudev.so.0.13.1 "/usr/lib/libudev.so.0.13.1"
   ln -s "/usr/lib/libudev.so.0.13.1" "/usr/lib/libudev.so.0"
 }
+
+export -f libudev0-build

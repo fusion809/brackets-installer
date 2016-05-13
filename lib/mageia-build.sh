@@ -6,7 +6,6 @@ function mageia-build {
   # Get dependencies
   sudo urpmi git curl libgnome-keyring-devel make gcc gcc-c++ libx11-devel libcrypt libudev0-devel
   node-build
-  sudo npm install -g gulp
   brackets-build
 }
 

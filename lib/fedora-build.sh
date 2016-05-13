@@ -8,6 +8,7 @@ function fedora-build {
   sudo dnf update -y
   sudo dnf install -y unzip nodejs-devel gcc gcc-c++ make \
     glibc-devel git-core compat-libgcrypt
+  sudo npm install -g node-gyp
   brackets-build
 }
 
