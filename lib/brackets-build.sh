@@ -51,7 +51,7 @@ function brackets-build {
   sudo install -Dm644 out/Release/devtools_resources.pak "/opt/brackets/devtools_resources.pak"
   sudo install -Dm755 out/Release/Brackets "/opt/brackets/Brackets"
   sudo install -Dm755 out/Release/Brackets-node "/opt/brackets/Brackets-node"
-  sudo install -Dm755 ./brackets "/opt/brackets/brackets"
+  sudo install -Dm755 $GHUB/brackets-installer/brackets "/opt/brackets/brackets"
   for size in 32 48 128 256; do
     sudo install -Dm644 "out/Release/appshell${size}.png" "/opt/brackets/appshell${size}.png"
   done
