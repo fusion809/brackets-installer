@@ -1,6 +1,6 @@
 . ./lib/brackets-build.sh
 
-function debian-build {
+function linux-mint-build {
   # Get dependencies
   sudo apt-get install -y curl
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -10,4 +10,4 @@ function debian-build {
   brackets-build
 }
 
-export -f debian-build
+export -f linux-mint-build
