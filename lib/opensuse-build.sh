@@ -5,8 +5,10 @@ function opensuse-build {
   # Get dependencies
   OSVER=$(lsb_release -r | sed 's/Release:\s*//g')
   if [[ $OSVER == "42.1" ]]; then
-    sudo zypper in -y http://download.opensuse.org/repositories/home:/simotek:/base/openSUSE_Leap_42.1/x86_64/libgcrypt11-1.5.4-7.1.x86_64.rpm \
-    http://download.opensuse.org/repositories/home:/etrash/openSUSE_Leap_42.1/x86_64/libudev0-182-1.1.x86_64.rpm
+    sudo zypper addrepo http://download.opensuse.org/repositories/home:simotek:base/openSUSE_Leap_42.1/home:simotek:base.repo
+    sudo zypper addrepo http://download.opensuse.org/repositories/home:fschuett/openSUSE_Leap_42.1/home:fschuett.repo
+    sudo zypper refresh
+    sudo zypper in -y libgcrypt libudev0
   else
     sudo zypper in -y libudev0 libgcrypt11
   fi
