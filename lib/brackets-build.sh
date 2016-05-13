@@ -73,6 +73,12 @@ function brackets-build {
   for size in 32 48 128 256; do
     sudo install -Dm644 "out/Release/appshell${size}.png" "/usr/share/icons/hicolor/${size}x${size}/apps/brackets.png"
   done
+
+  # Copy samples
+  sudo cp -R "$SRC_DEST/brackets/samples" "/opt/brackets/samples"
+  # Copy www
+  sudo cp -R "$SRC_DEST/brackets/src" "/opt/brackets/www"
+
 }
 
 export -f brackets-build
