@@ -30,3 +30,5 @@ function api-build {
 
   sudo cp -a install/usr/* /usr
 }
+
+export -f api-build
