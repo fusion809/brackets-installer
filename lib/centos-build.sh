@@ -8,7 +8,9 @@ function centos-build {
   sudo yum install -y unzip nodejs-devel gcc gcc-c++ make \
     glibc-devel git-core libgcrypt gtk2-devel python \
     libblkid-devel kmod-devel
-  sudo npm install -g node-gyp
+  if ! `comex node-gyp`; then
+    sudo npm install -g node-gyp
+  fi
   libudev0-build
   brackets-build
 }
