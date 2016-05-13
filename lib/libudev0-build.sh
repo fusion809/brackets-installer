@@ -16,7 +16,7 @@ function libudev0-build {
     --sbindir=/usr/bin \
     --libdir=/usr/lib \
     --libexecdir=/usr/lib/udev
-  make LIBS="-lrt"
+  make
   install -Dm755 .libs/libudev.so.0.13.1 "/usr/lib/libudev.so.0.13.1"
   ln -s "/usr/lib/libudev.so.0.13.1" "/usr/lib/libudev.so.0"
 }
