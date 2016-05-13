@@ -8,12 +8,11 @@
 export CHROME_WRAPPER="`readlink -f "$0"`"
 
 HERE="`dirname "$CHROME_WRAPPER"`"
-LD_LIBRARY_PATH=/usr/lib
 # This also makes RPMs find the compatibly-named library symlinks.
 if [[ -n "$LD_LIBRARY_PATH" ]]; then
-  LD_LIBRARY_PATH="$HERE:$HERE/lib:$LD_LIBRARY_PATH"
+  LD_LIBRARY_PATH="$HERE:$HERE/lib:/usr/lib:$LD_LIBRARY_PATH"
 else
-  LD_LIBRARY_PATH="$HERE:$HERE/lib"
+  LD_LIBRARY_PATH="$HERE:$HERE/lib:/usr/lib"
 fi
 export LD_LIBRARY_PATH
 
