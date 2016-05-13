@@ -15,7 +15,7 @@ function api-build {
   curl -sL $PATCH_SRC | tar xJ -C $PRG
 
   cd $PRG/linux-$MAJ
-    [[ $VER != $MAJ.0 ]] && patch -p1 -i $PRG/patch-$VER || true
+    [[ "$VER" != "$MAJ.0" ]] && patch -p1 -i $PRG/patch-$VER || true
 
   make mrproper
   make headers_check
