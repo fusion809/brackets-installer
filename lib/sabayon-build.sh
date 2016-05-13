@@ -7,7 +7,9 @@ function sabayon-build {
   sudo equo i net-libs/nodejs sys-devel/base-gcc sys-devel/gcc sys-libs/libstdc++ sys-libs/glibc \
     dev-vcs/git gnome-base/gnome-keyring gnome-base/libgnome-keyring x11-libs/libX11 dev-libs/libgcrypt \
     sys-apps/usbutils sys-apps/kmod dev-util/gperf dev-lang/python:2 x11-libs/gtk:2
-  sudo npm install -g node-gyp
+  if ! `comex node-gyp`; then
+    sudo npm install -g node-gyp
+  fi
   libudev0-build
   brackets-build
 }
