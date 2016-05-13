@@ -7,6 +7,8 @@ function opensuse-build {
   if [[ $OSVER == "42.1" ]]; then
     sudo zypper in -y http://download.opensuse.org/repositories/home:/simotek:/base/openSUSE_Leap_42.1/x86_64/libgcrypt11-1.5.4-7.1.x86_64.rpm \
     http://download.opensuse.org/repositories/home:/etrash/openSUSE_Leap_42.1/x86_64/libudev0-182-1.1.x86_64.rpm
+  else
+    sudo zypper in -y libudev0 libgcrypt11
   fi
   sudo zypper in -y nodejs nodejs-devel make gcc gcc-c++ glibc-devel \
     git-core libgnome-keyring-devel libX11-devel gtk2-devel python
