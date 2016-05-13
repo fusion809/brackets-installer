@@ -1,5 +1,6 @@
 #!/bin/bash
 . ./lib/brackets-build.sh
+. ./lib/libudev0-build.sh
 
 function centos-build {
   # Get dependencies
