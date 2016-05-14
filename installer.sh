@@ -23,6 +23,11 @@ export VER=$(cat /etc/os-release | grep -w "VERSION_ID" | sed 's/VERSION_ID=//g'
 ######################################################################################################
 
 source "./lib/test.sh"                        # Load the test functions
+source "./lib/install.sh"                     # Load the install function
+source "./lib/get.sh"                         # Load the get function
+source "./lib/build.sh"                       # Load the build function
+source "./lib/version.sh"                     # Load the version function
+source "./lib/variables.sh"                   # Load the variable-defining function
 
 # Load the distribution-specific libraries
 if [[ $LD == "Arch Linux" ]] || [[ $LD == "Manjaro"* ]]; then

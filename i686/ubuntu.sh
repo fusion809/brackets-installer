@@ -6,9 +6,9 @@ sudo apt-get install -y curl
 
 if [[ $preference == "A" ]]; then
 
-  ver=$(sed -n 's/ver=//p' ./lib/version.sh)
+  version
   # Download latest binary
-  curl -sL https://github.com/adobe/brackets/releases/download/release-$ver/Brackets.Release.$ver.32-bit.deb > /tmp/brackets-i386.deb
+  curl -sL https://github.com/adobe/brackets/releases/download/release-$pkgver/Brackets.Release.$pkgver.32-bit.deb > /tmp/brackets-i386.deb
   # install from deb
   sudo dpkg -i /tmp/brackets-i386.deb                                  # Install it with dpkg
   sudo apt-get -f install                                              # Install missing dependencies
