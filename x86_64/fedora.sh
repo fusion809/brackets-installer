@@ -8,7 +8,7 @@ if [[ $preference == "A" ]]; then
   sudo dnf update
   sudo dnf install -y brackets
 
-elif [[ $preference == "B" ]]; then
+else
 
   fedora-build
 

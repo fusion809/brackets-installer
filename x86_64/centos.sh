@@ -11,7 +11,7 @@ if [[ $preference == "A" ]]; then
   sudo yum install -y brackets
   cd -
 
-elif [[ $preference == "B" ]]; then
+else
 
   centos-build
 

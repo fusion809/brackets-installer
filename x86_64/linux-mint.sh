@@ -13,7 +13,7 @@ if [[ $preference == "A" ]]; then
   sudo dpkg -i /tmp/brackets-amd64.deb                                 # Install it with dpkg
   sudo apt-get -f install                                              # Install missing dependencies
 
-elif [[ $preference == "B" ]]; kthen
+else
 
   if ! [[ -d $HOME/Programs ]]; then
     mkdir $HOME/Programs

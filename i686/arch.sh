@@ -6,12 +6,12 @@ if comex brackets; then                       # Check if Brackets is already ins
 
 else
 
-  printf "Would you rather install Brackets from: A) a Debian binary (faster) or B) from source (slower, but more reliable)? [A/B] "
+  printf "Would you rather install Brackets from: A) a Debian binary (faster) or B) from source (slower, but more reliable)? [A/B; B is the default] "
   read preference
 
   if [[ $preference == "A" ]]; then
     brackaur bin
-  elif [[ $preference == "B" ]]; then
+  else
     brackaur
   fi
 
