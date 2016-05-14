@@ -13,7 +13,7 @@ This repository contains shell scripts that are to be used installing [Brackets]
 * [Ubuntu](http://www.ubuntu.com/) (and its major derivatives, such as [Linux Mint](https://linuxmint.com/))
 
 ## Use
-To use the [`quick-install.sh`](https://github.com/fusion809/brackets-installer/blob/master/quick-install.sh) script run:
+To use the [`quick-install.sh`](/quick-install.sh) script run:
 
 ```bash
 /bin/bash -c "$(curl -sL https://git.io/vrYlf)"
