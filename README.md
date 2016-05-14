@@ -24,5 +24,8 @@ while to use wget to get it run:
 /bin/bash -c "$(wget -cqO- https://git.io/vrYlf)"
 ```
 
+## Contributing
+Instructions on contributing to this repository can be found in the [CONTRIBUTING.md](/CONTRIBUTING.md) file. 
+
 ## License
 This installer is licensed under GNU GPLv3 (although Brackets itself is licensed under the MIT License), for a copy of its license see [LICENSE](/LICENSE).
