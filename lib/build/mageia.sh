@@ -1,6 +1,6 @@
 #!/bin/bash
-. ./lib/brackets-build.sh
-. ./lib/node-build.sh
+. ./lib/build/brackets.sh
+. ./lib/build/node.sh
 
 function mageia-build {
   # Get dependencies

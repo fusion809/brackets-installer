@@ -1,4 +1,4 @@
-. ./lib/brackets-build.sh
+. ./lib/build/brackets.sh
 
 function debian-build {
   # Get dependencies

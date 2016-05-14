@@ -1,5 +1,5 @@
 #!/bin/bash
-. ./lib/brackets-build.sh
+. ./lib/build/brackets.sh
 
 function fedora-build {
   # Get dependencies

@@ -1,3 +1,4 @@
+#!/bin/bash
 function brackets-build {
   export GHUB=$HOME/GitHub
 

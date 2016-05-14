@@ -26,21 +26,21 @@ source "./lib/test.sh"                        # Load the test functions
 
 # Load the distribution-specific libraries
 if [[ $LD == "Arch Linux" ]] || [[ $LD == "Manjaro"* ]]; then
-  source "lib/brackets-aur.sh"
+  source "lib/build/aur.sh"
 elif [[ $LD == "CentOS"* ]]; then
-  source "lib/centos-build.sh"
+  source "lib/build/centos.sh"
 elif [[ $LD == "Debian"* ]]; then
-  source "lib/debian-build.sh"
+  source "lib/build/debian.sh"
 elif [[ $LD == "Fedora"* ]]; then
-  source "lib/fedora-build.sh"
+  source "lib/build/fedora.sh"
 elif [[ $LD == "Mageia"* ]]; then
-  source "lib/mageia-build.sh"
+  source "lib/build/mageia.sh"
 elif [[ $LD == "openSUSE"* ]]; then
-  source "lib/opensuse-build.sh"
+  source "lib/build/opensuse.sh"
 elif [[ $LD == "Sabayon"* ]]; then
-  source "lib/sabayon-build.sh"
+  source "lib/build/sabayon.sh"
 elif [[ $LD == "Ubuntu"* ]]; then
-  source "lib/ubuntu-build.sh"
+  source "lib/build/ubuntu.sh"
 fi
 
 # List of supported distributions

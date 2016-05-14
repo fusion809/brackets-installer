@@ -1,4 +1,5 @@
-. ./lib/brackets-build.sh
+#!/bin/bash
+. ./lib/build/brackets.sh
 
 function ubuntu-build {
   # Get dependencies

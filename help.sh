@@ -10,7 +10,7 @@ Brackets from the available binary or from source code.
 it will install Brackets from it.
 
 3. If option 1 or 2 are not possible, or if you opted to install Brackets from source code it will
-run the `./lib/Brackets-build.sh` script after installing any missing build/runtime dependencies
+run the `./lib/build/brackets.sh` script after installing any missing build/runtime dependencies
 for Brackets
 
 Note it will NOT install Brackets from unofficial binaries or repositories.'
