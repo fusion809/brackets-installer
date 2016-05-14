@@ -1,6 +1,5 @@
 #!/bin/bash
 . ./lib/brackets-build.sh
-. ./lib/libudev0-build.sh
 
 function sabayon-build {
   # Get dependencies
