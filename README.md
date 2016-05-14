@@ -11,6 +11,7 @@ This repository contains shell scripts that are to be used installing [Brackets]
 * [Sabayon Linux](http://www.sabayon.org/)
 * [Ubuntu](http://www.ubuntu.com/) (and its major derivatives, such as [Linux Mint](https://linuxmint.com/))
 
+## Use
 To use the [`quick-install.sh`](https://github.com/fusion809/brackets-installer/blob/master/quick-install.sh) script run:
 
 ```bash
@@ -22,3 +23,6 @@ while to use wget to get it run:
 ```bash
 /bin/bash -c "$(wget -cqO- https://git.io/vrYlf)"
 ```
+
+## License
+This installer is licensed under GNU GPLv3 (although Brackets itself is licensed under the MIT License), for a copy of its license see [LICENSE](/LICENSE).
