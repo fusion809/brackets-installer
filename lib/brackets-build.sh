@@ -12,7 +12,7 @@ function brackets-build {
     SRC_DEST=$GHUB
   fi
 
-  wget -cqO- https://github.com/fusion809/brackets-installer/raw/master/brackets > $SRC_DEST/brackets2
+  wget -cqO- https://github.com/fusion809/brackets-installer/raw/master/resources/brackets > $SRC_DEST/brackets2
   sed -i -e "s|<%-index.html-%>|$SRC_DEST/brackets/src/index.html|g" $SRC_DEST/brackets2
 
   if ! [[ -d /tmp/brackets ]]; then
