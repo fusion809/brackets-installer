@@ -49,7 +49,6 @@ DISTROS=(
 'CentOS'                                    #  CentOS
 'Debian'                                    #  Debian
 'Fedora'                                    #  Fedora
-'Linux Mint'                                #  Linux Mint
 'Mageia'
 'Manjaro'                                   #  Manjaro Linux
 'openSUSE'                                  #  openSUSE
