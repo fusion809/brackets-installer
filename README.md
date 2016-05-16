@@ -1,5 +1,8 @@
 # Brackets Installer
-<p><img src="/images/Brackets-1.6-Arch.png" alt="Brackets 1.6 running on Arch Linux"><caption><b>Figure 1: Brackets 1.6 running on Arch Linux.</b></caption></p>
+<p>
+  <img src="/images/Brackets-1.6-Arch.png" alt="Brackets 1.6 running on Arch Linux">
+  <caption><b>Figure 1: Brackets 1.6 running on Arch Linux.</b></caption>
+</p>
 This repository contains shell scripts that are to be used installing [Brackets](http://brackets.io) on a variety of different Linux distributions, including:
 
 * [Arch Linux](https://www.archlinux.org)
