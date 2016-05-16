@@ -15,7 +15,7 @@ if [[ -d $GHUBM ]]; then
   cd $GHUBM
 
   if ! [[ -d $GHUBM/brackets-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the brackets-installer repository locally ==>\n"
+    printf "Getting the brackets-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
@@ -30,30 +30,22 @@ if [[ -d $GHUBM ]]; then
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
     fi
   else
-    printf "The brackets-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if [[ $yn == "y" ]]; then
+    printf "Updating your local copy of brackets-installer. ==>\n"
+    ## git
+    if [[ -d $GHUBM/brackets-installer/.git ]]; then
+      cd $GHUBM/brackets-installer
+      git pull origin master
+      cd .
 
-      ## git
-      if [[ -d $GHUBM/brackets-installer/.git ]]; then
-        cd $GHUBM/brackets-installer
-        git pull origin master
-        cd .
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUBM/brackets-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUBM/brackets-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
-
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUBM/brackets-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUBM/brackets-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
     fi
 
   fi
@@ -62,7 +54,7 @@ else
   cd $GHUB
 
   if ! [[ -d $GHUB/brackets-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the brackets-installer repository locally ==>\n"
+    printf "Getting the brackets-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
@@ -77,32 +69,24 @@ else
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
     fi
   else
-    printf "The brackets-installer repository is already locally present! "
-    printf "\n"
-    printf "Update your local copy? [y/n] "
-    read yn
-    if [[ $yn == "y" ]]; then
+    printf "Updating your local copy of brackets-installer. ==>\n"
 
-      ## git
-      if [[ -d $GHUB/brackets-installer/.git ]]; then
-        cd $GHUB/brackets-installer
-        git pull origin master
-        cd .
+    ## git
+    if [[ -d $GHUB/brackets-installer/.git ]]; then
+      cd $GHUB/brackets-installer
+      git pull origin master
+      cd .
 
-      ## cURL
-      elif which curl >/dev/null 2>&1; then
-        rm -rf $GHUB/brackets-installer
-        curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
+    ## cURL
+    elif which curl >/dev/null 2>&1; then
+      rm -rf $GHUB/brackets-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
 
-      ## wget
-      elif which wget >/dev/null 2>&1; then
-        rm -rf $GHUB/brackets-installer
-        wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
-      fi
-    else
-      printf "Suit yourself!"
+    ## wget
+    elif which wget >/dev/null 2>&1; then
+      rm -rf $GHUB/brackets-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
     fi
-
   fi
 
 fi
