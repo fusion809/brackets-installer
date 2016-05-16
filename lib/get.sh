@@ -24,7 +24,7 @@ function get-shell {
 export -f get-shell
 
 function get-script {
-  wget -cqO- https://github.com/fusion809/brackets-installer/raw/master/resources/brackets > $SRC_DEST/brackets2
+  mv $INDIR/resources/brackets $SRC_DEST/brackets2
   sed -i -e "s|<%-index.html-%>|$SRC_DEST/brackets/src/index.html|g" $SRC_DEST/brackets2
 }
 
