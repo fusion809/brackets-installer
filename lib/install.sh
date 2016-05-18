@@ -1,5 +1,5 @@
 #!/bin/bash
-function ${lowedit}_install {
+function brackets_install {
   if [[ $DEST_TYPE == "system" ]]; then
     cd $SRC_DEST/${lowedit}-shell
     sudo install -dm755 "/opt/${lowedit}"

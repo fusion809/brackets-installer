@@ -1,5 +1,5 @@
 #!/bin/bash
-function get-${lowedit} {
+function get-brackets {
   if ! [[ -d $SRC_DEST/${lowedit} ]]; then
     git clone https://github.com/adobe/${lowedit}.git $SRC_DEST/${lowedit}
   fi
