@@ -24,7 +24,7 @@ function get-shell {
 export -f get-shell
 
 function get-script {
-  mv $INDIR/resources/${lowedit} $SRC_DEST/${lowedit}2
+  cp $INDIR/resources/${lowedit} $SRC_DEST/${lowedit}2
   sed -i -e "s|<%-index.html-%>|$SRC_DEST/${lowedit}/src/index.html|g" $SRC_DEST/${lowedit}2
 }
 
