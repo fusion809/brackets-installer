@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # This is a quick install script to install Brackets ASAP
-export REPO=https://github.com/fusion809/brackets-installer
+
+# Editor name
+export EDIT=Brackets
+# Lower case name
+export lowedit=$(echo $EDIT | tr '[:upper:]' '[:lower:]')
+# Repo URL
+export REPO=https://github.com/fusion809/$lowedit-installer
+# GHUB/GHUBM
 export GHUB=$HOME/GitHub
 export GHUBM=$HOME/GitHub/mine
 
@@ -14,38 +21,38 @@ fi
 if [[ -d $GHUBM ]]; then
   cd $GHUBM
 
-  if ! [[ -d $GHUBM/brackets-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the brackets-installer repository locally. ==>\n"
+  if ! [[ -d $GHUBM/$lowedit-installer ]]; then                                                  # Get the repository, if necessary
+    printf "Getting the $lowedit-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
-      git clone $REPO $GHUBM/brackets-installer
+      git clone $REPO $GHUBM/$lowedit-installer
 
     ## cURL
     elif which curl >/dev/null 2>&1; then
-      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUBM
 
     ## wget
     elif which wget >/dev/null 2>&1; then
-      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUBM
     fi
   else
-    printf "Updating your local copy of brackets-installer. ==>\n"
+    printf "Updating your local copy of $lowedit-installer. ==>\n"
     ## git
-    if [[ -d $GHUBM/brackets-installer/.git ]]; then
-      cd $GHUBM/brackets-installer
+    if [[ -d $GHUBM/$lowedit-installer/.git ]]; then
+      cd $GHUBM/$lowedit-installer
       git pull origin master
       cd .
 
     ## cURL
     elif which curl >/dev/null 2>&1; then
-      rm -rf $GHUBM/brackets-installer
-      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
+      rm -rf $GHUBM/$lowedit-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUBM
 
     ## wget
     elif which wget >/dev/null 2>&1; then
-      rm -rf $GHUBM/brackets-installer
-      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUBM
+      rm -rf $GHUBM/$lowedit-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUBM
     fi
 
   fi
@@ -53,39 +60,39 @@ if [[ -d $GHUBM ]]; then
 else
   cd $GHUB
 
-  if ! [[ -d $GHUB/brackets-installer ]]; then                                                  # Get the repository, if necessary
-    printf "Getting the brackets-installer repository locally. ==>\n"
+  if ! [[ -d $GHUB/$lowedit-installer ]]; then                                                  # Get the repository, if necessary
+    printf "Getting the $lowedit-installer repository locally. ==>\n"
 
     ## git
     if which git >/dev/null 2>&1; then
-      git clone $REPO $GHUB/brackets-installer
+      git clone $REPO $GHUB/$lowedit-installer
 
     ## cURL
     elif which curl >/dev/null 2>&1; then
-      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUB
 
     ## wget
     elif which wget >/dev/null 2>&1; then
-      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUB
     fi
   else
-    printf "Updating your local copy of brackets-installer. ==>\n"
+    printf "Updating your local copy of $lowedit-installer. ==>\n"
 
     ## git
-    if [[ -d $GHUB/brackets-installer/.git ]]; then
-      cd $GHUB/brackets-installer
+    if [[ -d $GHUB/$lowedit-installer/.git ]]; then
+      cd $GHUB/$lowedit-installer
       git pull origin master
       cd .
 
     ## cURL
     elif which curl >/dev/null 2>&1; then
-      rm -rf $GHUB/brackets-installer
-      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
+      rm -rf $GHUB/$lowedit-installer
+      curl -sL $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUB
 
     ## wget
     elif which wget >/dev/null 2>&1; then
-      rm -rf $GHUB/brackets-installer
-      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/brackets-installer-master/brackets-installer/ -C $GHUB
+      rm -rf $GHUB/$lowedit-installer
+      wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUB
     fi
   fi
 
@@ -93,10 +100,10 @@ fi
 ###########################################################################################################################################
 
 # Run the main installer script
-if [[ -d $GHUB/brackets-installer ]]; then
-  cd $GHUB/brackets-installer
+if [[ -d $GHUB/$lowedit-installer ]]; then
+  cd $GHUB/$lowedit-installer
   ./installer.sh
-elif [[ -d $GHUBM/brackets-installer ]]; then
-  cd $GHUBM/brackets-installer
+elif [[ -d $GHUBM/$lowedit-installer ]]; then
+  cd $GHUBM/$lowedit-installer
   ./installer.sh
 fi
