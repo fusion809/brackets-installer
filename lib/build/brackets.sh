@@ -1,5 +1,5 @@
 #!/bin/bash
-function brackets-build {
+function brackets_build {
   variables
 
   get-script
@@ -9,11 +9,11 @@ function brackets-build {
   # Get the shell source
   get-shell
 
-  shell-build
+  shell_build
 
   get-brackets
 
-  brackets-install
+  brackets_install
 }
 
-export -f brackets-build
+export -f brackets_build

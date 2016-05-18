@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/brackets.sh
 
-function centos-build {
+function centos_build {
   # Get dependencies
   curl -sL https://rpm.nodesource.com/setup_6.x | sudo bash -     # Get the latest version of Node.js
   sudo yum install -y unzip nodejs-devel gcc gcc-c++ make \
@@ -10,7 +10,7 @@ function centos-build {
   if ! `comex node-gyp`; then
     sudo npm install -g node-gyp
   fi
-  brackets-build
+  brackets_build
 }
 
-export -f centos-build
+export -f centos_build

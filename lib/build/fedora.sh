@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/brackets.sh
 
-function fedora-build {
+function fedora_build {
   # Get dependencies
   sudo dnf copr enable nibbler/nodejs
   sudo dnf copr enable mosquito/brackets
@@ -9,7 +9,7 @@ function fedora-build {
   sudo dnf install -y unzip nodejs-devel npm gcc gcc-c++ make \
     glibc-devel git-core compat-libgcrypt gtk2-devel python
   sudo npm install -g node-gyp
-  brackets-build
+  brackets_build
 }
 
-export -f fedora-build
+export -f fedora_build

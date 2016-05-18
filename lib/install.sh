@@ -1,5 +1,5 @@
 #!/bin/bash
-function brackets-install {
+function brackets_install {
   cd $SRC_DEST/brackets-shell
   sudo install -dm755 "/opt/brackets"
   sudo cp -R out/Release/lib "/opt/brackets/lib"
@@ -31,4 +31,4 @@ function brackets-install {
   sudo cp -R "$SRC_DEST/brackets/src" "/opt/brackets/www"
 }
 
-export -f brackets-install
+export -f brackets_install

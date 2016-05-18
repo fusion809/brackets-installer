@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/brackets.sh
 
-function ubuntu-build {
+function ubuntu_build {
   # Get dependencies
   sudo apt-get install -y curl
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -9,7 +9,7 @@ function ubuntu-build {
     libgnome-keyring-dev fakeroot python libgcrypt11-dev \
     libgtk2.0-dev
   sudo npm install -g node-gyp
-  brackets-build
+  brackets_build
 }
 
-export -f ubuntu-build
+export -f ubuntu_build

@@ -23,6 +23,6 @@ else
   curl -OsL http://ftp.au.debian.org/debian/pool/main/u/udev/libudev0_175-7.2_i386.deb
   sudo dpkg -i *.deb
   sudo apt-get -f install
-  debian-build
+  debian_build
 
 fi

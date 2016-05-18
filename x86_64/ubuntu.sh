@@ -22,6 +22,6 @@ else
   curl -sL http://security.ubuntu.com/ubuntu/pool/main/libg/libgcrypt11/libgcrypt11_1.5.3-2ubuntu4.3_amd64.deb > $HOME/Programs/libgcrypt11_1.5.3-2ubuntu4.3_amd64.deb
   sudo dpkg -i $HOME/Programs/libudev0_175-0ubuntu9_amd64.deb
   sudo dpkg -i $HOME/Programs/libgcrypt11_1.5.3-2ubuntu4.3_amd64.deb
-  ubuntu-build
+  ubuntu_build
 
 fi

@@ -1,2 +1,2 @@
 #!/bin/bash
-sabayon-build
+sabayon_build

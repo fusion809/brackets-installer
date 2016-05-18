@@ -22,6 +22,6 @@ else
   curl -sL http://mirror.optus.net/ubuntu/pool/main/u/udev/libudev0_175-0ubuntu9_i386.deb > $HOME/Programs/libudev0_175-0ubuntu9_i386.deb
   sudo dpkg -i $HOME/Programs/libudev0_175-0ubuntu9_i386.deb
   sudo dpkg -i $HOME/Programs/libgcrypt11_1.5.3-2ubuntu4.3_i386.deb
-  ubuntu-build
+  ubuntu_build
 
 fi

@@ -1,2 +1,2 @@
 #!/bin/bash
-opensuse-build
+opensuse_build

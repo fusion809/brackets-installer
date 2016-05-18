@@ -21,6 +21,6 @@ else
     bsdtar -xf /tmp/libudev-147-2.63.el6_7.1.x86_64.rpm -C /tmp
     sudo cp -a /tmp/lib64/libudev.so.0* /usr/lib/
   fi
-  centos-build
+  centos_build
 
 fi

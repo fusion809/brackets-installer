@@ -1,7 +1,7 @@
 #!/bin/bash
 . ./lib/build/brackets.sh
 
-function opensuse-build {
+function opensuse_build {
   # Get dependencies
   OSVER=$(lsb_release -r | sed 's/Release:\s*//g')
   if [[ $OSVER == "42.1" ]]; then
@@ -18,7 +18,7 @@ function opensuse-build {
   if ! `comex node-gyp`; then
     sudo npm install -g node-gyp
   fi
-  brackets-build
+  brackets_build
 }
 
-export -f opensuse-build
+export -f opensuse_build

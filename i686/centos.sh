@@ -9,4 +9,4 @@ if ! [[ -f /usr/lib/libudev.so.0 ]]; then
   sudo cp -a /tmp/lib/libudev.so.0* /usr/lib/
 fi
 
-centos-build
+centos_build

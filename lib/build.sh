@@ -1,5 +1,5 @@
 #!/bin/bash
-function shell-build {
+function shell_build {
   npm install
   rm -rf out
   node_modules/grunt-cli/bin/grunt cef-clean
@@ -10,4 +10,4 @@ function shell-build {
   make
 }
 
-export -f shell-build
+export -f shell_build
