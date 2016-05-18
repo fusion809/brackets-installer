@@ -57,6 +57,9 @@ if [[ -d $GHUBM ]]; then
 
   fi
 
+  cd $GHUBM/$lowedit-installer
+  ./installer.sh
+
 else
   cd $GHUB
 
@@ -95,15 +98,6 @@ else
       wget -cqO- $REPO/archive/master.tar.gz | tar xz --transform=s/$lowedit-installer-master/$lowedit-installer/ -C $GHUB
     fi
   fi
-
-fi
-###########################################################################################################################################
-
-# Run the main installer script
-if [[ -d $GHUB/$lowedit-installer ]]; then
   cd $GHUB/$lowedit-installer
-  ./installer.sh
-elif [[ -d $GHUBM/$lowedit-installer ]]; then
-  cd $GHUBM/$lowedit-installer
   ./installer.sh
 fi
