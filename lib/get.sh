@@ -5,7 +5,7 @@ function get-brackets {
   fi
 
   cd $SRC_DEST/${lowedit}
-  git checkout release-$ver
+  git checkout release-$pkgver
   git submodule update --init --recursive
 }
 
