@@ -1,6 +1,9 @@
 #!/bin/bash
 function variables {
   export GHUB=$HOME/GitHub
+  export LH=$HOME/.local
+  export LB=$LH/bin
+  export LS=$LH/share
 
   # Get the source code
   printf "How would you like to get the source code? \n[Available options: curl/git/wget/? If left blank the default value of `curl` will be used.]\n"
