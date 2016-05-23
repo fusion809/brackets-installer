@@ -15,8 +15,12 @@ printf "\n\nGreetings, you seem to be using an operating system that is not offi
 * gtk2
 This script will test for each of these dependencies and tell you which one you need to install. If a package is installed yet still this script returns a output indicating it is not, you will need to add the package's executable to your PATH.\n"
 
+if ! [[ -f /usr/lib/pkgconfig/gconf-2.0.pc ]]; then
+  printf "gconf does not seem to be installed.\n"
+fi
+
 if ! [[ -f /usr/lib/libasound.so ]]; then
-  printf "alsa-lib is not installed.\n"
+  printf "alsa-lib does not seem to be installed.\n"
 fi
 
 if ! `comex node`; then
