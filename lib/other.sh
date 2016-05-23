@@ -43,6 +43,10 @@ if ! `comex node-gyp`; then
   fi
 fi
 
+if ! [[ -f /usr/lib/libgcrypt.so.11 ]]; then
+  printf "The essential libgcrypt.so.11 library was not found, which likely indicates that you do not have the required version of libgcrypt installed.\n"
+fi
+
 if ! [[ -f /usr/lib/libudev.so.0 ]]; then
   printf "libudev.so.0 was not detected! If your distribution does not have libudev.so.0 in its official repositories, but does have some newer version of libudev, I would recommend installing it and using `ln -s` to create a symbolic link to /usr/lib/libudev.so.0.\n"
 fi
