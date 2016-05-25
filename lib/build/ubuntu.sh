@@ -8,7 +8,9 @@ function ubuntu_build {
   sudo apt-get install -y nodejs build-essential git libudev0 \
     libgnome-keyring-dev fakeroot python libgcrypt11-dev \
     libgtk2.0-dev
-  sudo npm install -g node-gyp
+  if ! `comex node-gyp`; then
+    sudo npm install -g node-gyp
+  fi
   brackets_build
 }
 

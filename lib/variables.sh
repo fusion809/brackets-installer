@@ -6,7 +6,7 @@ function variables {
   export LS=$LH/share
 
   # Get the source code
-  printf "How would you like to get the source code? \n[Available options: curl/git/wget/? If left blank the default value of `curl` will be used.]\n"
+  printf "How would you like to get the source code? \n[Available options: curl/git/wget/? If left blank the default value of curl will be used.]\n"
   read SRC_METHOD
 
   printf "Where do you want to store the source code? \n[Leave empty for $GHUB]\n"

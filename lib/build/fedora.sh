@@ -8,7 +8,9 @@ function fedora_build {
   sudo dnf update -y
   sudo dnf install -y unzip nodejs-devel npm gcc gcc-c++ make \
     glibc-devel git-core compat-libgcrypt gtk2-devel python
-  sudo npm install -g node-gyp
+  if ! `comex node-gyp`; then
+    sudo npm install -g node-gyp
+  fi
   brackets_build
 }
 
