@@ -6,6 +6,7 @@ function version {
   else
     cd /tmp/brackets
     git pull origin master
+    cd -
   fi
 
   pkgver=$(sed -n 's/pkgver=//p' /tmp/brackets/PKGBUILD)
